@@ -1,0 +1,36 @@
+00:11:46 **** Incremental Build of configuration Debug for project feki ****
+make all 
+Building file: ../code.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"code.d" -MT"code.o" -c -o "code.o" "../code.c"
+In file included from ../code.c:6:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../code.c
+ 
+Building target: feki.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,feki.map -mmcu=atmega16 -o "feki.elf"  ./code.o   
+Finished building target: feki.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S feki.elf  >"feki.lss"
+Finished building: feki.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 feki.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    5410 bytes (33.0% Full)
+(.text + .data + .bootloader)
+
+Data:         11 bytes (1.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+00:11:47 Build Finished. 0 errors, 1 warnings. (took 1s.107ms)
+
